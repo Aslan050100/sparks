@@ -138,6 +138,9 @@ def main():
     logo_info, logo = build_logo()
     manifest.update(logo_info)
     build_og(logo)
+    # Keep entries owned by tools/concept-art.py (SVG illustrations).
+    old = json.loads((ROOT / "src" / "images.json").read_text()) if (ROOT / "src" / "images.json").exists() else {}
+    manifest.update({k: v for k, v in old.items() if v.get("svg")})
     (ROOT / "src" / "images.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
 

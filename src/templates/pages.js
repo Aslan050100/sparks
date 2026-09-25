@@ -170,20 +170,6 @@ export function servicePage(lang, t, slug) {
     availableLanguage: ['ru', 'kk', 'en'],
     image: abs(`/img/${s.img}-${images[s.img].widths.at(-1)}.webp`),
   };
-  if (s.showPackages) {
-    service.hasOfferCatalog = {
-      '@type': 'OfferCatalog',
-      name: t.packages.title,
-      itemListElement: t.packages.names.map((n, i) => ({
-        '@type': 'Offer',
-        name: `${s.name} — ${n}`,
-        price: t.packages.prices[i],
-        priceCurrency: 'KZT',
-        availability: 'https://schema.org/InStock',
-        url: abs(path) + '#packages',
-      })),
-    };
-  }
   page.jsonld = [...baseGraph(lang, t), webPage(lang, page, { breadcrumb: breadcrumbLd(crumbs), mainEntity: { '@id': service['@id'] } }), service];
 
   const body = html`<section class="page-hero" aria-labelledby="page-title">

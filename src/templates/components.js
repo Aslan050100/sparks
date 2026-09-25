@@ -1,6 +1,6 @@
 import config from '../config.js';
 import { contactLinks } from './layout.js';
-import { esc, formatPrice, html, icon, paths, picture } from './helpers.js';
+import { esc, html, icon, paths, picture } from './helpers.js';
 
 export const sectionHead = (label, title, id, extra = '') => html`<div class="section-head">
 <p class="eyebrow">${label}</p>
@@ -43,10 +43,10 @@ export function packagesTable(lang, t) {
 <table class="packages-table">
 <thead><tr><th scope="col">${p.rowsTitle}</th>${p.names.map((n, i) => `<th scope="col"${i === 1 ? ' class="hl"' : ''}>${esc(n)}</th>`)}</tr></thead>
 <tbody>${p.rows.map(([name, ...vals]) => html`<tr><th scope="row">${esc(name)}</th>${vals.map((v, i) => `<td${i === 1 ? ' class="hl"' : ''}>${cell(v)}</td>`)}</tr>`)}</tbody>
-<tfoot><tr><th scope="row">${p.price}</th>${p.prices.map((v, i) => `<td${i === 1 ? ' class="hl"' : ''}>${formatPrice(v, lang)}</td>`)}</tr></tfoot>
 </table>
 </div>
-<p class="note">${esc(p.luxuryNote)}</p>`;
+<p class="note">${esc(p.luxuryNote)}</p>
+<div class="price-cta"><p>${esc(p.priceNote)}</p><a class="btn" href="#lead">${esc(p.priceCta)}</a></div>`;
 }
 
 export function packageCards(lang, t) {
@@ -59,7 +59,7 @@ export function packageCards(lang, t) {
     const label = (r) => (typeof r[i + 1] === 'string' ? `${r[0]} · ${r[i + 1]}` : r[0]);
     return html`<li class="package${i === 1 ? ' package-hl' : ''}">
 <h3>${esc(name)}</h3>
-<p class="price">${formatPrice(p.prices[i], lang)}</p>
+<p class="package-note">${esc(p.onRequest)}</p>
 <ul>${items.map((r) => `<li>${esc(label(r))}</li>`)}</ul>
 </li>`;
   })}</ul>`;

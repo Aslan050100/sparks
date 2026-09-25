@@ -68,7 +68,7 @@ tools/prepare-assets.py  конвертация шрифтов/фото из ass
 - **Core Web Vitals**: CSS встроен в HTML, JS 3 КБ с `defer`, предзагрузка шрифтов, AVIF/WebP с `srcset`, `width/height` у всех картинок, `fetchpriority="high"` для LCP-картинки, Brotli/gzip, кэширование. Lighthouse: Performance 97–100, Accessibility, Best Practices и SEO по 100, CLS = 0.
 - **Мобильная версия**: адаптивная вёрстка от 320 px, мобильное меню.
 - **Перелинковка**: карточки услуг на главной, блок «Другие услуги» на каждой странице услуги, хлебные крошки, все услуги в футере, переключатель языков.
-- **schema.org** (JSON-LD): Organization, WebSite, WebPage, FAQPage, ItemList, Service, OfferCatalog (цены пакетов в KZT), BreadcrumbList.
+- **schema.org** (JSON-LD): Organization, WebSite, WebPage, FAQPage, ItemList, Service, BreadcrumbList.
 - **Open Graph и Twitter Cards**: для каждого языка своя картинка 1200×630.
 - **Доступность для краулеров**: весь контент есть в HTML с сервера, JavaScript не нужен. Тесты запрашивают каждый URL из sitemap с User-Agent OAI-SearchBot, Googlebot, Bingbot, YandexBot и ChatGPT-User.
 - **llms.txt** — краткое описание компании для AI-ассистентов.
@@ -115,4 +115,5 @@ server { listen 443 ssl; server_name www.sparks-agency.kz; return 301 https://sp
 ```bash
 pip install pillow fonttools brotli
 DRUK_FONT=/path/to/DrukWideCyr-Bold.otf python3 tools/prepare-assets.py
+python3 tools/concept-art.py   # SVG-иллюстрации концепций вечера
 ```

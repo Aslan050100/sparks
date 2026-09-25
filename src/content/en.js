@@ -20,8 +20,6 @@ export default {
     included: "What's included",
     formats: 'Formats and ideas',
     why: 'Why Sparks',
-    from: 'from',
-    currency: '₸',
   },
 
   form: {
@@ -90,7 +88,7 @@ export default {
     faq: [
       { q: 'What kinds of events does Sparks organise?', a: 'Corporate and New Year parties, business forums and conferences, weddings, team building, product launches, openings, private celebrations and show programmes of any format and scale.' },
       { q: 'Where do you work?', a: 'We are based in Astana, run events across Kazakhstan and travel to other cities and countries when a project calls for it.' },
-      { q: 'How much does an event cost?', a: 'It depends on the format, number of guests and programme. New Year packages start at 1,000,000 ₸. We prepare an exact estimate after a short brief.' },
+      { q: 'How much does an event cost?', a: 'It depends on the format, number of guests and programme. We prepare an exact estimate after a short brief: send a request or give us a call.' },
       { q: 'How far in advance should we book?', a: 'Ideally 3–6 weeks ahead for a corporate party and 2–3 months for a forum or wedding. In the December season the best dates and artists are booked early.' },
       { q: 'Can you build a custom programme?', a: 'Yes. Packages are only a starting point: we design a concept around your budget, guest count and format, and add artists, décor, photo and video.' },
     ],
@@ -104,18 +102,17 @@ export default {
   ],
 
   concepts: [
-    { img: 'awards', t: 'New Year Awards', d: 'A corporate awards night with nominations and staff recognition' },
-    { img: 'casino', t: 'Casino Night', d: 'Casino show, croupiers and gaming entertainment' },
-    { img: 'party', t: '90s / 2000s Party', d: 'The music, dance battles and atmosphere of the era' },
-    { img: 'masquerade', t: 'Masquerade Night', d: 'Masks, red carpet, a show programme and décor' },
-    { img: 'gala', t: 'Gala Night', d: 'Premium format: live band, saxophone, red carpet and ceremony' },
+    { img: 'concept-awards', t: 'New Year Awards', d: 'A corporate awards night with nominations and staff recognition' },
+    { img: 'concept-casino', t: 'Casino Night', d: 'Casino show, croupiers and gaming entertainment' },
+    { img: 'concept-party', t: '90s / 2000s Party', d: 'The music, dance battles and atmosphere of the era' },
+    { img: 'concept-masquerade', t: 'Masquerade Night', d: 'Masks, red carpet, a show programme and décor' },
+    { img: 'concept-gala', t: 'Gala Night', d: 'Premium format: live band, saxophone, red carpet and ceremony' },
   ],
 
   packages: {
     title: 'New Year party packages',
     rowsTitle: 'Programme',
     names: ['Standard', 'Premium', 'Luxury'],
-    prices: [1000000, 1500000, 2500000],
     rows: [
       ['Host + interactive games', 1, 1, 1],
       ['Boys Band — vocal and dance show', 1, 1, 1],
@@ -128,7 +125,9 @@ export default {
       ['Stand-up comedian', 0, 1, 1],
       ['Live band', 0, 0, 1],
     ],
-    price: 'Price',
+    onRequest: 'Price on request',
+    priceNote: 'We price every event around your format, venue and guest count.',
+    priceCta: 'Get a quote',
     luxuryNote: 'Luxury is for companies that expect a flawless experience: live music, a spectacular show and a true celebration your guests will remember.',
     addonsTitle: 'Extend the programme',
     addonsText: 'Any of these services can be added to the package you choose.',
@@ -181,7 +180,7 @@ export default {
     'new-year-corporate': {
       name: 'New Year corporate party',
       short: 'A complete New Year evening: welcome area, show, interactive games, photo zones and live music.',
-      title: 'New Year Corporate Party in Astana from 1,000,000 ₸ | Sparks',
+      title: 'Turnkey New Year Corporate Party in Astana | Sparks',
       description: 'Turnkey New Year corporate party in Astana and across Kazakhstan: host, show programme, Father Frost and Snow Maiden, DJ, photo booth, live band. Standard, Premium and Luxury packages.',
       h1: 'Turnkey New Year corporate party',
       lead: "We'll create a complete New Year evening for your team, from the guest welcome and welcome area to a spectacular show, interactive games and a closing live performance.",
@@ -194,7 +193,7 @@ export default {
       ],
       formats: null,
       why: [
-        'Ready-made packages at fixed prices',
+        'Ready-made packages for any scale',
         'Themed concepts: Awards, Casino, Masquerade, Gala',
         'Flexible add-ons to match your budget',
       ],
@@ -319,12 +318,15 @@ export default {
   },
 
   alts: {
+    'concept-awards': 'Illustration: a trophy under spotlights — New Year Awards',
+    'concept-casino': 'Illustration: roulette wheel, playing cards and chips — Casino Night',
+    'concept-party': 'Illustration: disco ball and cassette tape — 90s/2000s party',
+    'concept-masquerade': 'Illustration: Venetian mask and red carpet — Masquerade Night',
+    'concept-gala': 'Illustration: crystal chandelier and champagne coupes — Gala Night',
     logo: 'Sparks Event Agency logo',
     dj: 'DJ performing at a Sparks corporate event',
     handshake: 'A guest receiving an award at a Sparks event',
     guests: 'Guests at a Sparks corporate evening around a cocktail table',
-    awards: 'Stage with trophies for a New Year Awards corporate ceremony',
-    casino: 'Guests at a roulette table during Casino Night',
     party: 'Neon-lit dance floor at a 90s and 2000s themed party',
     masquerade: 'Masked guests on the red carpet at Masquerade Night',
     gala: 'Saxophonist performing at a gala night in a chandelier-lit hall',

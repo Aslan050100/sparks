@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+<linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="800" y2="500"><stop offset="0" stop-color="#f6d9a0"/><stop offset=".4" stop-color="#c8883f"/><stop offset=".65" stop-color="#ecbb6c"/><stop offset="1" stop-color="#9a6326"/></linearGradient>
+<radialGradient id="glow" cx="0.50" cy="0.38" r=".6"><stop offset="0" stop-color="#5a3c16" stop-opacity=".75"/><stop offset=".6" stop-color="#1c140c" stop-opacity=".4"/><stop offset="1" stop-color="#0b0908" stop-opacity="0"/></radialGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d9a0" stop-opacity=".45"/><stop offset="1" stop-color="#f6d9a0" stop-opacity="0"/></linearGradient>
+<radialGradient id="a" cx="0.50" cy="0.62" r=".5"><stop offset="0" stop-color="#5b1f6b" stop-opacity=".35"/><stop offset="1" stop-color="#5b1f6b" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="500" fill="#0d0a08"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<rect width="800" height="500" fill="url(#a)"/>
+<g fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M400 0 v65"/>
+<circle cx="400" cy="170" r="105" fill="#0d0a08"/>
+<path stroke-width="2" d="M321.7 100 L478.3 100"/>
+<path stroke-width="2" d="M301 135 L499 135"/>
+<path stroke-width="2" d="M295 170 L505 170"/>
+<path stroke-width="2" d="M301 205 L499 205"/>
+<path stroke-width="2" d="M321.7 240 L478.3 240"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="97" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="74.2" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="40.2" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="0" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="40.2" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="74.2" ry="105"/>
+<ellipse stroke-width="2" cx="400" cy="170" rx="97" ry="105"/>
+<path stroke-width="2" opacity="0.25" d="M286.3 128.6 L5.3 26.4"/>
+<path stroke-width="2" opacity="0.33" d="M304.7 95.5 L69 -88.6"/>
+<path stroke-width="2" opacity="0.41000000000000003" d="M332.3 69.7 L165.1 -178.2"/>
+<path stroke-width="2" opacity="0.25" d="M366.6 53.7 L284.2 -233.7"/>
+<path stroke-width="2" opacity="0.33" d="M404.2 49.1 L414.7 -249.7"/>
+<path stroke-width="2" opacity="0.41000000000000003" d="M441.4 56.3 L543.6 -224.7"/>
+<path stroke-width="2" opacity="0.25" d="M474.5 74.7 L658.6 -161"/>
+<path stroke-width="2" opacity="0.33" d="M500.3 102.3 L748.2 -64.9"/>
+<path stroke-width="2" opacity="0.41000000000000003" d="M516.3 136.6 L803.7 54.2"/>
+<rect x="250" y="330" width="300" height="140" rx="14" fill="#0d0a08"/>
+<rect x="276" y="350" width="248" height="62" rx="6" stroke-width="3"/>
+<circle cx="335" cy="381" r="20"/><circle cx="465" cy="381" r="20"/>
+<circle stroke-width="2" cx="335" cy="381" r="7"/><circle stroke-width="2" cx="465" cy="381" r="7"/>
+<path stroke-width="3" d="M362 372 h76 v18 h-76z"/>
+<path d="M300 470 l18 -34 h164 l18 34"/>
+<circle stroke-width="2" cx="330" cy="452" r="5"/><circle stroke-width="2" cx="470" cy="452" r="5"/>
+<path stroke-width="3" d="M130 360 v-70 l40 -10 v70"/><circle stroke="none" fill="url(#g)" cx="122" cy="362" r="11"/><circle stroke="none" fill="url(#g)" cx="162" cy="352" r="11"/><path stroke-width="3" d="M660 330 v-66"/><path stroke-width="3" d="M660 264 c10 8 24 10 28 26"/><circle stroke="none" fill="url(#g)" cx="651" cy="332" r="11"/><path stroke-width="3" d="M210 106 L213.9 116.1 L224 120 L213.9 123.9 L210 134 L206.1 123.9 L196 120 L206.1 116.1Z"/>
+<path stroke-width="3" d="M600 98 L603.4 106.6 L612 110 L603.4 113.4 L600 122 L596.6 113.4 L588 110 L596.6 106.6Z"/>
+<path stroke-width="3" d="M120 222 L122.2 227.8 L128 230 L122.2 232.2 L120 238 L117.8 232.2 L112 230 L117.8 227.8Z"/>
+<path stroke-width="3" d="M690 211 L692.5 217.5 L699 220 L692.5 222.5 L690 229 L687.5 222.5 L681 220 L687.5 217.5Z"/>
+<path stroke-width="3" d="M560 273 L562 278 L567 280 L562 282 L560 287 L558 282 L553 280 L558 278Z"/>
+</g>
+</svg>

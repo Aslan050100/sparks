@@ -1,18 +1,4 @@
 {
-  "awards": {
-    "w": 315,
-    "h": 194,
-    "widths": [
-      315
-    ]
-  },
-  "casino": {
-    "w": 315,
-    "h": 194,
-    "widths": [
-      315
-    ]
-  },
   "dj": {
     "w": 705,
     "h": 1057,
@@ -66,5 +52,30 @@
       360,
       480
     ]
+  },
+  "concept-awards": {
+    "w": 800,
+    "h": 500,
+    "svg": true
+  },
+  "concept-casino": {
+    "w": 800,
+    "h": 500,
+    "svg": true
+  },
+  "concept-party": {
+    "w": 800,
+    "h": 500,
+    "svg": true
+  },
+  "concept-masquerade": {
+    "w": 800,
+    "h": 500,
+    "svg": true
+  },
+  "concept-gala": {
+    "w": 800,
+    "h": 500,
+    "svg": true
   }
 }

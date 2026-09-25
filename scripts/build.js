@@ -149,7 +149,7 @@ function build() {
       ...Object.entries(en.services).map(([slug, s]) => `- [${s.name}](${abs(paths.service('en', slug))}): ${s.short}`),
       '',
       '## New Year packages',
-      ...en.packages.names.map((n, i) => `- ${n}: ${en.packages.prices[i].toLocaleString('en-US')} KZT`),
+      ...en.packages.names.map((n) => `- ${n} (price on request)`),
       '',
       '## Languages',
       ...config.languages.map((l) => `- ${config.langNames[l]}: ${abs(paths.home(l))}`),

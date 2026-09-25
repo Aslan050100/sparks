@@ -25,11 +25,6 @@ export const paths = {
   thanks: (lang) => `/${lang}/thanks/`,
 };
 
-export function formatPrice(n, lang) {
-  const s = new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'ru-RU').format(n).replace(/ | /g, ' ');
-  return `${s} ₸`;
-}
-
 let markCount = 0;
 export function mark(cls = 'mark', title = '') {
   const id = `gm${++markCount}`;
@@ -40,6 +35,9 @@ export function mark(cls = 'mark', title = '') {
 export function picture(name, alt, { sizes = '100vw', eager = false, cls = '' } = {}) {
   const img = images[name];
   if (!img) throw new Error(`Unknown image ${name}`);
+  if (img.svg) {
+    return html`<picture${cls ? ` class="${cls}"` : ''}><img src="/img/${name}.svg" alt="${esc(alt)}" width="${img.w}" height="${img.h}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
+  }
   const set = (ext) => img.widths.map((w) => `/img/${name}-${w}.${ext} ${w}w`).join(', ');
   const largest = img.widths[img.widths.length - 1];
   const h = Math.round((img.h * largest) / img.w);
