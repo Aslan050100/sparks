@@ -3,6 +3,10 @@ import { addons, breadcrumbs, concepts, faq, leadForm, packageCards, packagesTab
 import { abs, esc, html, icon, images, mark, paths, picture } from './helpers.js';
 
 const ORG_ID = abs('/#organization');
+const AREA_SERVED = [
+  { '@type': 'City', name: config.city },
+  { '@type': 'Country', name: 'Kazakhstan' },
+];
 const SITE_ID = abs('/#website');
 
 // Entities shared by every page.
@@ -20,7 +24,8 @@ function baseGraph(lang, t) {
       email: config.email,
       telephone: config.phone,
       sameAs: [config.instagram, config.telegram],
-      areaServed: { '@type': 'Country', name: 'Kazakhstan' },
+      address: { '@type': 'PostalAddress', addressLocality: config.city, addressCountry: config.country },
+      areaServed: AREA_SERVED,
       knowsLanguage: ['ru', 'kk', 'en'],
       contactPoint: {
         '@type': 'ContactPoint',
@@ -161,7 +166,7 @@ export function servicePage(lang, t, slug) {
     description: s.description,
     url: abs(path),
     provider: { '@id': ORG_ID },
-    areaServed: { '@type': 'Country', name: 'Kazakhstan' },
+    areaServed: AREA_SERVED,
     availableLanguage: ['ru', 'kk', 'en'],
     image: abs(`/img/${s.img}-${images[s.img].widths.at(-1)}.webp`),
   };

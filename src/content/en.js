@@ -13,7 +13,7 @@ export default {
     call: 'Call',
     whatsapp: 'Message on WhatsApp',
     contactPerson: 'manager',
-    footerTagline: 'Event agency. We produce events of any format and scale across Kazakhstan.',
+    footerTagline: 'Event agency based in Astana. We produce events of any format and scale across Kazakhstan.',
     rights: 'All rights reserved.',
     privacy: 'Privacy policy',
     related: 'Other services',
@@ -55,9 +55,9 @@ export default {
   },
 
   home: {
-    title: 'Sparks — Event Agency in Kazakhstan | Corporate Events, Forums, Weddings',
-    description: 'Sparks is a full-service event agency in Kazakhstan: corporate parties, New Year events, business forums, weddings and team building. Concept, artists, production and on-site coordination.',
-    eyebrow: 'Turnkey events · Kazakhstan',
+    title: 'Sparks — Event Agency in Astana, Kazakhstan | Corporate Events',
+    description: 'Sparks is a full-service event agency in Astana, Kazakhstan: corporate parties, New Year events, business forums, weddings and team building. Concept, artists, production and on-site coordination.',
+    eyebrow: 'Turnkey events · Astana',
     h1: 'We create events people remember',
     lead: 'Corporate parties, forums, weddings and gala nights of any scale, fully managed from the first brief to the final report.',
     about: {
@@ -89,7 +89,7 @@ export default {
     faqTitle: 'Frequently asked questions',
     faq: [
       { q: 'What kinds of events does Sparks organise?', a: 'Corporate and New Year parties, business forums and conferences, weddings, team building, product launches, openings, private celebrations and show programmes of any format and scale.' },
-      { q: 'Where do you work?', a: 'We run events across Kazakhstan and travel to other cities and countries when a project calls for it.' },
+      { q: 'Where do you work?', a: 'We are based in Astana, run events across Kazakhstan and travel to other cities and countries when a project calls for it.' },
       { q: 'How much does an event cost?', a: 'It depends on the format, number of guests and programme. New Year packages start at 1,000,000 ₸. We prepare an exact estimate after a short brief.' },
       { q: 'How far in advance should we book?', a: 'Ideally 3–6 weeks ahead for a corporate party and 2–3 months for a forum or wedding. In the December season the best dates and artists are booked early.' },
       { q: 'Can you build a custom programme?', a: 'Yes. Packages are only a starting point: we design a concept around your budget, guest count and format, and add artists, décor, photo and video.' },
@@ -151,7 +151,7 @@ export default {
     'corporate-events': {
       name: 'Corporate events',
       short: 'Turnkey corporate events, from intimate evenings to company-wide celebrations.',
-      title: 'Corporate Event Planning in Kazakhstan | Sparks',
+      title: 'Corporate Event Planning in Astana | Sparks',
       description: 'Turnkey corporate event planning: concept, host, artists, DJ, décor, photo and video. From intimate dinners to celebrations for hundreds of guests. Sparks Event Agency.',
       h1: 'Corporate event planning',
       lead: 'We design and run turnkey corporate events, from intimate evenings to large-scale celebrations. You set the goal and we handle everything else.',
@@ -181,8 +181,8 @@ export default {
     'new-year-corporate': {
       name: 'New Year corporate party',
       short: 'A complete New Year evening: welcome area, show, interactive games, photo zones and live music.',
-      title: 'Turnkey New Year Corporate Party from 1,000,000 ₸ | Sparks',
-      description: 'Turnkey New Year corporate party in Kazakhstan: host, show programme, Father Frost and Snow Maiden, DJ, photo booth, live band. Standard, Premium and Luxury packages.',
+      title: 'New Year Corporate Party in Astana from 1,000,000 ₸ | Sparks',
+      description: 'Turnkey New Year corporate party in Astana and across Kazakhstan: host, show programme, Father Frost and Snow Maiden, DJ, photo booth, live band. Standard, Premium and Luxury packages.',
       h1: 'Turnkey New Year corporate party',
       lead: "We'll create a complete New Year evening for your team, from the guest welcome and welcome area to a spectacular show, interactive games and a closing live performance.",
       img: 'dj',
@@ -204,7 +204,7 @@ export default {
     'business-forums': {
       name: 'Business forums and conferences',
       short: 'Business events across Kazakhstan and international forums for 5,000+ guests.',
-      title: 'Business Forum and Conference Organisation | Sparks',
+      title: 'Business Forum and Conference Organisation in Astana | Sparks',
       description: 'We organise business forums, conferences and international events for 5,000+ guests: concept, production, venue, registration, speakers and coordination.',
       h1: 'Business forum and conference organisation',
       lead: 'We run large-scale business events across Kazakhstan, from concept and production to venue and guest coordination. Our portfolio includes an international forum for 5,000+ attendees with speakers, partners and guests from many countries.',
@@ -234,7 +234,7 @@ export default {
     weddings: {
       name: 'Weddings',
       short: 'Bespoke concepts, show programmes and atmosphere for life’s special moments.',
-      title: 'Wedding Planning in Kazakhstan | Sparks Event Agency',
+      title: 'Wedding Planning in Astana | Sparks Event Agency',
       description: 'Full-service wedding planning: concept, décor, host, artists, live band, photo and video, and on-the-day coordination. Sparks Event Agency.',
       h1: 'Wedding planning',
       lead: 'We create bespoke concepts, show programmes and atmosphere for your most special day. You enjoy the celebration while we take care of every detail.',
@@ -263,7 +263,7 @@ export default {
     'team-building': {
       name: 'Team building',
       short: 'Interactive programmes and team activities that turn an ordinary day into an event.',
-      title: 'Corporate Team Building Programmes | Sparks',
+      title: 'Corporate Team Building in Astana | Sparks',
       description: 'Team building for companies: quests, sports and creative programmes, off-site formats. We bring your people together and turn an ordinary day into an event.',
       h1: 'Team building for companies',
       lead: 'Interactive programmes and team activities that bring colleagues together and turn an ordinary working day into an event.',
@@ -291,7 +291,7 @@ export default {
     'private-events': {
       name: 'Private events and shows',
       short: 'Launches, openings, birthdays, parties, show programmes and custom event projects.',
-      title: 'Private Events, Product Launches and Openings | Sparks',
+      title: 'Private Events, Launches and Openings in Astana | Sparks',
       description: 'We organise birthdays, parties, product launches, openings and show programmes. Concept, artists, décor and coordination, fully managed.',
       h1: 'Private events, launches and shows',
       lead: 'Product launches, openings, private celebrations, parties, show programmes and custom event projects. Every idea comes with a well-crafted concept and flawless execution.',

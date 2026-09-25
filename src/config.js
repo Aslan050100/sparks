@@ -15,6 +15,7 @@ export default {
   instagram: 'https://www.instagram.com/sparks/',
   email: 'pro@sparks-agency.kz',
   country: 'KZ',
+  city: 'Astana',
   languages: ['ru', 'kk', 'en'],
   defaultLang: 'ru',
   locales: { ru: 'ru_RU', kk: 'kk_KZ', en: 'en_US' },
