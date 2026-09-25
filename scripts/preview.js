@@ -49,6 +49,7 @@ let single = readFileSync(pagePath, 'utf8')
   .replace(/url\('(\.\.\/fonts\/[^']+)'\)/g, (_, rel) => `url('${dataUri(rel, 'font/woff2')}')`)
   .replace(/<source [^>]+>/g, '') // keep only the <img> fallback (largest WebP)
   .replace(/<img src="(\.\.\/img\/[^"]+\.webp)"/g, (_, rel) => `<img src="${dataUri(rel, 'image/webp')}"`)
+  .replace(/<img src="(\.\.\/img\/[^"]+\.svg)"/g, (_, rel) => `<img src="${dataUri(rel, 'image/svg+xml')}"`)
   .replace(/<link rel="(icon|apple-touch-icon|manifest)"[^>]*>\n?/g, '');
 // Inline JS must run after the markup, so move it to the end of <body>.
 const jsRel = single.match(/<script src="(\.\.\/assets\/[^"]+)" defer><\/script>\n?/);
