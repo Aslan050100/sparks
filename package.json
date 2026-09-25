@@ -4,11 +4,14 @@
   "private": true,
   "description": "Sparks Event Agency — multilingual landing site",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "start": "node server.js",
     "dev": "node scripts/build.js && node server.js",
-    "test": "node scripts/build.js && node --test tests/*.test.js"
+    "test": "node scripts/build.js && node --test tests/*.test.js",
+    "preview": "node scripts/build.js && node scripts/preview.js"
   }
 }
