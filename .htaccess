@@ -7,6 +7,9 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Let's Encrypt проверяет домен по http — эту папку не трогаем
+  RewriteRule ^\.well-known/ - [L]
+
   # https + без www → https://senimenagency.kz
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\. [NC]
