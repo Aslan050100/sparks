@@ -1,7 +1,11 @@
+.DS_Store
+Thumbs.db
 node_modules/
-dist/
-data/
+.vscode/
+.idea/
 *.log
 .env
-.DS_Store
+*.mov
+*.MOV
+dist/
 preview/
