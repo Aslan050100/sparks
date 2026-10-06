@@ -39,6 +39,7 @@ npm test           # 34 проверки: статусы, robots, sitemap, canon
 ## Деплой
 
 - **GitHub Pages**: Settings → Pages → Branch `main`, папка `/ (root)`. Свой домен — файл `CNAME` с `senimenagency.kz` и DNS-записи у регистратора.
+- **Plesk (Git)**: Сайты и домены → Git → репозиторий `https://github.com/Aslan050100/sparks.git`, ветка с сайтом, режим «Автоматически», путь `/httpdocs`. Дополнительные действия развертывания не нужны (сборки нет). Правила лежат в `.htaccess`: https и без www, 404, закрытые служебные папки, кэш, gzip. Если в Plesk включён режим «только nginx», `.htaccess` не работает — тогда правила из блока nginx ниже вставить в «Дополнительные директивы nginx».
 - **Netlify / Cloudflare Pages**: импорт репозитория, build command пустой, publish directory — корень. `_headers` применится автоматически.
 - **Свой сервер (nginx)**:
 
