@@ -92,7 +92,7 @@ server { listen 443 ssl; server_name www.senimenagency.kz; return 301 https://se
 
 ## Как заменить фото
 
-1. Положить оригинал в `assets-src/photos/<имя>.jpg` (имена: `hero-forum-stage`, `arena-forum`, `concert-lights`, `brand-event`, `wedding-bride`, `wedding-tag`, `drums-show`, `dj`, `wedding-table`, `guests`, `backstage-poster`, `registration-poster`).
+1. Положить оригинал в `assets-src/photos/<имя>.jpg` (имена: `hero-forum-stage`, `arena-forum`, `concert-lights`, `brand-event`, `wedding-bride`, `wedding-tag`, `drums-show`, `dj`, `wedding-table`, `guests`, `backstage-poster`, `registration-poster`, `brand-reel-poster`, `ethno-dj`, `kobyz`, `wedding-decor`).
 2. Выполнить:
 
 ```bash
