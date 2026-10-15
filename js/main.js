@@ -15,7 +15,6 @@
       if (v('f-phone')) lines.push('Телефон: ' + v('f-phone'));
       lines.push('Формат: ' + v('f-format'));
       if (v('f-date')) lines.push('Дата: ' + v('f-date'));
-      if (v('f-guests')) lines.push('Гостей: ' + v('f-guests'));
       a.href = WA + '?text=' + encodeURIComponent(lines.join('\n'));
     };
     f.addEventListener('input', build);
