@@ -92,7 +92,7 @@ server { listen 443 ssl; server_name www.senimenagency.kz; return 301 https://se
 
 ## Как заменить фото
 
-1. Положить оригинал в `assets-src/photos/<имя>.jpg` (имена: `hero-forum-stage`, `arena-forum`, `concert-lights`, `party-crowd`, `speaker`, `dj`, `hostess`, `guests`, `backstage-poster`, `registration-poster`).
+1. Положить оригинал в `assets-src/photos/<имя>.jpg` (имена: `hero-forum-stage`, `arena-forum`, `concert-lights`, `brand-event`, `wedding-bride`, `wedding-tag`, `drums-show`, `dj`, `wedding-table`, `guests`, `backstage-poster`, `registration-poster`).
 2. Выполнить:
 
 ```bash
@@ -114,7 +114,7 @@ ffmpeg -i input.mov -an -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p \
 
 ## TODO
 
-- [ ] Заменить временные фото: `arena-forum`, `speaker` (сейчас копия главного фото), `party-crowd`, `hostess` (сейчас копия `guests`)
+- [ ] Заменить временное фото `arena-forum` (сейчас копия главного фото)
 - [ ] Подтвердить Telegram (сейчас `t.me/sparksagency`)
 - [ ] Форма: подключить CRM или Telegram-бота (сейчас открывает WhatsApp)
 - [ ] Логотипы клиентов и партнёров, фото команды
