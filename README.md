@@ -100,8 +100,13 @@ pip install pillow fonttools brotli
 python3 tools/optimize-images.py    # WebP/JPG из assets-src/photos
 python3 tools/render-pictures.py    # обновит srcset/размеры в index.html
 python3 tools/brand-assets.py       # печать, фавиконки, og-image.jpg (если менялся бренд)
+python3 tools/cache-bust.py         # обновит ?v= у style.css, main.js, og-image.jpg
 npm test
 ```
+
+## После правок CSS/JS
+
+После любого изменения `css/style.css`, `js/main.js` или `og-image.jpg` выполнить `python3 tools/cache-bust.py` — иначе браузеры посетителей могут показывать старую версию стилей. `npm test` это проверяет.
 
 ## Видео
 

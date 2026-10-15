@@ -122,12 +122,24 @@ describe('page SEO', () => {
       const refs = [
         ...[...html.matchAll(/(?:href|src|poster|data-src)="([^"#:]+)"/g)].map((m) => m[1]),
         ...[...html.matchAll(/srcset="([^"]+)"/g)].flatMap((m) => m[1].split(',').map((s) => s.trim().split(' ')[0])),
-      ].filter((r) => r && !r.startsWith('mailto') && !r.startsWith('tel'));
+      ].filter((r) => r && !r.startsWith('mailto') && !r.startsWith('tel')).map((r) => r.split('?')[0]);
       for (const ref of refs) {
         const file = ref.startsWith('/') ? ref.slice(1) : new URL(ref, `file:///${base}`).pathname.slice(1);
         const target = file === '' || file.endsWith('/') ? `${file}index.html` : file;
         assert.ok(existsSync(target), `${page}: ${ref}`);
       }
+    }
+  });
+
+  test('css/js/og-image URLs carry the current content hash (run tools/cache-bust.py)', async () => {
+    const { createHash } = await import('node:crypto');
+    const hash = (f) => createHash('sha256').update(readFileSync(f)).digest('hex').slice(0, 10);
+    for (const page of ['index.html', 'privacy/index.html', '404.html']) {
+      const html = readFileSync(page, 'utf8');
+      for (const f of ['css/style.css', 'js/main.js', 'og-image.jpg']) {
+        for (const [, v] of html.matchAll(new RegExp(`${f.replace('.', '\\.')}\\?v=([0-9a-f]+)`, 'g'))) assert.equal(v, hash(f), `${page}: ${f}`);
+      }
+      assert.match(html, /css\/style\.css\?v=/, page);
     }
   });
 
@@ -153,6 +165,6 @@ describe('performance hygiene', () => {
   test('no third-party requests in the critical path', async () => {
     const html = await text('/');
     assert.doesNotMatch(html, /fonts\.googleapis|fonts\.gstatic/);
-    assert.match(html, /<script src="js\/main\.js" defer>/);
+    assert.match(html, /<script src="js\/main\.js\?v=[0-9a-f]+" defer>/);
   });
 });
