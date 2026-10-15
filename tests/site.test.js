@@ -147,7 +147,7 @@ describe('page SEO', () => {
 describe('performance hygiene', () => {
   test('text is compressed and static assets are cacheable', async () => {
     assert.equal((await get('/', { 'Accept-Encoding': 'gzip' })).headers.get('content-encoding'), 'gzip');
-    assert.match((await get('/fonts/DrukWideCyr-Bold.woff2')).headers.get('cache-control'), /max-age=31536000/);
+    assert.match((await get('/fonts/playfair-display-latin-900-normal.woff2')).headers.get('cache-control'), /max-age=31536000/);
     assert.match((await get('/assets/img/dj-800.webp')).headers.get('cache-control'), /max-age=2592000/);
   });
   test('no third-party requests in the critical path', async () => {

@@ -5,15 +5,27 @@
 
 Статический сайт: HTML + CSS + немного JS. Сборка не нужна — файлы из репозитория можно отдавать как есть.
 
+## Бренд
+
+| | |
+|---|---|
+| Цвета | Black `#0A0A0A` · Klein blue `#1F3FD1` · White `#F5F5F2` · Chrome `#C9CCD1` |
+| Логотип | «senimen.» строчными, Playfair Display Black, трекинг −0.04em, точка синяя (на синем фоне — чёрная). Вертикальная версия «seni / men.» — в футере |
+| Знак | синяя круглая печать с курсивной S (Playfair Display Black Italic), повёрнута на −12° — `assets/img/seal.svg`, на синем фоне `seal-black.svg` |
+| Шрифты | Playfair Display Black — логотип и заголовки, Black Italic — акценты; IBM Plex Sans — тексты и подписи капсом с разрядкой. Лицензия SIL OFL, файлы в `fonts/` |
+| Слоган | Not for everyone / Не для всех |
+
+Синий не используется как цвет текста на чёрном (контраст 2,5:1) — только заливки, точка логотипа, кнопки, линии.
+
 ## Структура
 
 ```
 index.html              главная (одна страница с разделами)
 privacy/index.html      политика конфиденциальности
 404.html                страница «не найдено» (noindex)
-css/style.css           стили (тёмная тема, золото #c9954f)
+css/style.css           стили бренда
 js/main.js              форма → сообщение в WhatsApp, ленивая загрузка видео
-fonts/                  Druk Wide Cyr Bold (заголовки), Rubik (текст) — свои, без Google Fonts
+fonts/                  Playfair Display Black / Black Italic, IBM Plex Sans (кириллица + латиница) — свои, без Google Fonts
 assets/img/             оптимизированные фото (WebP 480–1800 px + один JPG на фото)
 assets/video/           видео (mp4, h264, без звука)
 robots.txt, sitemap.xml, llms.txt, site.webmanifest, og-image.jpg, иконки
@@ -25,7 +37,7 @@ tools/                  скрипты для картинок
 ```
 
 URL-структура: `/` — главная, `/privacy/` — политика, всё остальное — 404.
-Разделы главной: `#services`, `#formats`, `#packages`, `#concepts`, `#how`, `#contact`, `#faq`.
+Разделы главной: `#services`, `#formats`, `#about`, `#how`, `#contact`, `#faq`.
 
 ## Запуск локально
 
@@ -71,9 +83,9 @@ server { listen 443 ssl; server_name www.senimenagency.kz; return 301 https://se
 | canonical | Абсолютный `https://senimenagency.kz/...` на каждой странице |
 | index/noindex | Страницы — `index, follow, max-image-preview:large`; 404 — `noindex` (meta + `X-Robots-Tag`) |
 | HTTP status | 200 для страниц, 301 `/index.html` → `/` и `/privacy` → `/privacy/`, 404 со своей страницей, 405 на POST, 206 для видео |
-| Core Web Vitals | Lighthouse: Performance 98 (моб.) / 100 (десктоп), LCP 2,1 с / 0,6 с, CLS 0, TBT 100 мс. Preload шрифтов и главного фото, WebP + srcset, width/height у всех картинок, lazy-loading, видео грузится только при прокрутке |
+| Core Web Vitals | Lighthouse: Performance 95 (моб.) / 100 (десктоп), LCP 2,6 с / 0,7 с, CLS 0, TBT ≤ 100 мс. Preload шрифтов и главного фото, WebP + srcset, width/height у всех картинок, lazy-loading, видео грузится только при прокрутке |
 | Мобильная версия | Проверена на 320–1440 px, без горизонтальной прокрутки |
-| Перелинковка | Меню, карточки услуг → проекты/пакеты/заявка, «по запросу» → форма, футер → политика, хлебные крошки на политике |
+| Перелинковка | Меню, карточки услуг → проекты/заявка, футер → контакты и политика, хлебные крошки на политике |
 | schema.org | Organization (адрес, контакты, услуги), WebSite, WebPage + FAQPage, BreadcrumbList |
 | Open Graph | Полный набор og:* и twitter:*, картинка 1200×630 `og-image.jpg` |
 | Краулеры | Весь текст есть в HTML без JavaScript. Тесты запрашивают страницы с User-Agent OAI-SearchBot, ChatGPT-User, GPTBot, Googlebot, YandexBot, Bingbot, PerplexityBot |
@@ -84,9 +96,10 @@ server { listen 443 ssl; server_name www.senimenagency.kz; return 301 https://se
 2. Выполнить:
 
 ```bash
-pip install pillow fonttools
-DRUK_FONT=/path/to/DrukWideCyr-Bold.otf python3 tools/optimize-images.py   # WebP/JPG, иконки, og-image.jpg
-python3 tools/render-pictures.py                                          # обновит srcset/размеры в index.html
+pip install pillow fonttools brotli
+python3 tools/optimize-images.py    # WebP/JPG из assets-src/photos
+python3 tools/render-pictures.py    # обновит srcset/размеры в index.html
+python3 tools/brand-assets.py       # печать, фавиконки, og-image.jpg (если менялся бренд)
 npm test
 ```
 
@@ -102,9 +115,7 @@ ffmpeg -i input.mov -an -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p \
 ## TODO
 
 - [ ] Заменить временные фото: `arena-forum`, `speaker` (сейчас копия главного фото), `party-crowd`, `hostess` (сейчас копия `guests`)
-- [ ] Логотип Senimen (сейчас текстовый логотип и буква «S» в иконке)
 - [ ] Подтвердить Telegram (сейчас `t.me/sparksagency`)
 - [ ] Форма: подключить CRM или Telegram-бота (сейчас открывает WhatsApp)
 - [ ] Логотипы клиентов и партнёров, фото команды
 - [ ] Яндекс.Метрика / GA, Яндекс.Вебмастер и Google Search Console (добавить sitemap)
-- [ ] Проверить лицензию шрифта Druk Wide для веба
