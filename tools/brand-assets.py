@@ -115,8 +115,10 @@ def og_image():
             d.text((cx, cy), ch, font=font, fill=fill)
             cx += font.getlength(ch) + track * font.size
 
-    spaced((408, 380), "NOT FOR EVERYONE", caps, CHROME)
-    spaced((408, 424), "НЕ ДЛЯ ВСЕХ", caps_cy, CHROME)
+    spaced((408, 380), "ВЫ ДОВЕРЯЕТЕ ", caps_cy, CHROME)
+    dash_x = 408 + sum(caps_cy.getlength(c) + 0.22 * 26 for c in "ВЫ ДОВЕРЯЕТЕ ")
+    spaced((dash_x, 380), "—", caps, CHROME)  # the dash lives in the latin subset
+    spaced((408, 424), "МЫ СОЗДАЁМ", caps_cy, CHROME)
     spaced((408, 520), "EVENT AGENCY · ASTANA", caps, "#7C7F85")
     im.convert("RGB").save(ROOT / "og-image.jpg", quality=88, optimize=True, progressive=True)
 
