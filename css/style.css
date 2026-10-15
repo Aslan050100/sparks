@@ -45,7 +45,7 @@ p{margin:0}
 .btn:hover{border-color:var(--white)}
 .btn--blue{background:var(--blue);border-color:var(--blue);color:var(--white)}
 .btn--blue:hover{background:var(--blue-2);border-color:var(--blue-2)}
-.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible,.track:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--white);outline-offset:3px}
 section{padding-block:clamp(64px,9vw,120px)}
 .head{display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(32px,5vw,56px)}
 
@@ -65,15 +65,19 @@ section{padding-block:clamp(64px,9vw,120px)}
 @media (max-width:860px){.nav{display:none}}
 @media (max-width:420px){.top .btn{display:none}}
 
-/* hero */
-.hero{position:relative;padding:0;min-height:min(88vh,780px);display:flex;align-items:flex-end;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.3) 0%,rgba(10,10,10,.55) 45%,var(--black) 100%)}
-.hero .wrap{position:relative;z-index:1;width:100%;padding-block:clamp(96px,14vw,150px) clamp(48px,7vw,84px);display:flex;flex-direction:column;gap:22px}
-.hero h1{font-size:clamp(34px,7.4vw,104px);max-width:12ch;letter-spacing:-.03em}
-.hero h1 em{color:var(--chrome)}
-.hero .lead{color:#E3E4E6;font-size:clamp(17px,1.6vw,20px)}
-.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+/* hero: brand screen over the photo — seal · «senimen.» · slogan (ru + kk) · services line */
+.hero{position:relative;padding:0;min-height:min(92vh,820px);display:flex;align-items:center;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.4) contrast(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.72) 0%,rgba(10,10,10,.8) 55%,var(--black) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:clamp(72px,10vw,120px);display:flex;flex-direction:column;gap:18px}
+.hero-brand{display:flex;align-items:center;gap:clamp(18px,3vw,36px)}
+.hero .seal{width:clamp(76px,11vw,150px);height:auto;flex:none}
+.hero-logo{font-size:clamp(54px,11vw,150px);margin:0}
+.hero-slogan{font-family:var(--body);font-weight:500;font-size:clamp(15px,1.9vw,24px);letter-spacing:.2em;text-transform:uppercase;color:var(--white);line-height:1.6;margin-top:clamp(8px,2vw,24px)}
+.hero-slogan span{display:block}
+.hero-kz{font-family:var(--display);font-style:italic;font-weight:900;font-size:clamp(18px,2vw,26px);color:var(--chrome)}
+.hero .lead{color:var(--muted);font-size:clamp(14px,1.3vw,17px);letter-spacing:.14em;text-transform:uppercase}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
 
 /* numbers */
 .nums{padding-block:0}
@@ -96,32 +100,23 @@ section{padding-block:clamp(64px,9vw,120px)}
 @media (max-width:860px){.svc{grid-template-columns:1fr 1fr}.svc a{padding-left:0!important;border-left:none!important;padding-right:20px}}
 @media (max-width:520px){.svc{grid-template-columns:1fr}}
 
-/* projects (photo cards) */
-.formats{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.fmt{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:flex-end;grid-column:span 6;background:var(--black-3)}
-.fmt.wide{grid-column:span 7}.fmt.narrow{grid-column:span 5}.fmt.full{grid-column:span 12;min-height:460px}
-.fmt img,.fmt video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.fmt:hover img{transform:scale(1.03)}
-.fmt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.92) 100%)}
-.fmt .cap{position:relative;z-index:1;padding:26px;display:flex;flex-direction:column;gap:8px}
-.fmt .cap p{color:#E3E4E6;font-size:15.5px;max-width:42ch}
-@media (max-width:760px){.fmt,.fmt.wide,.fmt.narrow,.fmt.full{grid-column:span 12;min-height:300px}}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
-.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;max-width:100%}
-.strip .span2{grid-column:span 2}
-.strip .span2 img{aspect-ratio:auto;height:100%}
-@media (max-width:760px){.strip{grid-template-columns:1fr 1fr}}
-
-/* manifesto band — black, mirrors og-image: seal · «senimen.» · slogan in spaced caps */
-.manifest{background:var(--black);border-block:1px solid var(--line)}
-.manifest .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.manifest .seal{width:clamp(120px,16vw,220px);height:auto}
-.manifest-text{min-width:0}
-.manifest-logo{font-size:clamp(56px,9vw,128px);margin:0}
-.manifest-slogan{font-family:var(--body);font-weight:500;font-size:clamp(15px,1.7vw,22px);letter-spacing:.22em;text-transform:uppercase;color:var(--chrome);line-height:1.7;margin-top:18px}
-.manifest-slogan span{display:block}
-.manifest-meta{margin-top:clamp(28px,4vw,56px);font-size:clamp(13px,1.3vw,18px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#7C7F85}
-@media (max-width:560px){.manifest .wrap{grid-template-columns:1fr}.manifest .seal{width:110px}}
+/* projects carousel: one row of photos, chips jump to a format */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.chip{font:500 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--chrome);background:transparent;border:1px solid var(--line-2);padding:12px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--white);color:var(--white)}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.track{list-style:none;margin:0;padding:0 0 6px;display:grid;grid-auto-flow:column;grid-auto-columns:clamp(260px,38%,520px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.slide{position:relative;scroll-snap-align:start;aspect-ratio:4/5;overflow:hidden;background:var(--black-3)}
+.slide img,.slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.slide:hover img{transform:scale(1.03)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,10,10,.85) 100%)}
+.slide-cat{position:absolute;left:22px;bottom:20px;z-index:1;font-family:var(--display);font-weight:900;font-size:clamp(20px,2vw,26px);letter-spacing:-.01em}
+.car-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.car-btn{width:52px;height:52px;border:1px solid var(--line-2);background:transparent;color:var(--white);font-size:20px;cursor:pointer;transition:background .2s,border-color .2s}
+.car-btn:hover{background:var(--blue);border-color:var(--blue)}
+.car-btn:disabled{opacity:.3;cursor:default;background:transparent;border-color:var(--line-2)}
+@media (max-width:760px){.track{grid-auto-columns:82%}.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}.chips::-webkit-scrollbar{display:none}.chip{flex:none}}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;margin:0;padding:0}

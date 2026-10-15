@@ -24,6 +24,41 @@
     build();
   }
 
+  // Projects carousel: arrows scroll by one slide, chips jump to the first slide of a format
+  // and highlight the format currently in view.
+  document.querySelectorAll('[data-carousel]').forEach(function (car) {
+    var track = car.querySelector('.track');
+    var slides = Array.prototype.slice.call(track.children);
+    var chips = car.querySelectorAll('.chip');
+    var prev = car.querySelector('[data-dir="-1"]');
+    var next = car.querySelector('[data-dir="1"]');
+    var step = function () { return slides[0].getBoundingClientRect().width + 16; };
+    var scrollToSlide = function (el) { track.scrollTo({ left: el.offsetLeft - track.offsetLeft, behavior: 'smooth' }); };
+    car.querySelectorAll('.car-btn').forEach(function (b) {
+      b.addEventListener('click', function () { track.scrollBy({ left: step() * Number(b.dataset.dir), behavior: 'smooth' }); });
+    });
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        var first = track.querySelector('[data-cat="' + c.dataset.go + '"]');
+        if (first) scrollToSlide(first);
+      });
+    });
+    var sync = function () {
+      var x = track.scrollLeft;
+      var current = slides[0];
+      slides.forEach(function (s) { if (s.offsetLeft - track.offsetLeft <= x + 8) current = s; });
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.go === current.dataset.cat)); });
+      prev.disabled = x <= 2;
+      next.disabled = x >= track.scrollWidth - track.clientWidth - 2;
+    };
+    var t;
+    track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(sync, 60); }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: step() * (e.key === 'ArrowRight' ? 1 : -1), behavior: 'smooth' }); }
+    });
+    sync();
+  });
+
   // Videos load only when scrolled into view and pause off-screen; posters stay for reduced motion.
   var videos = document.querySelectorAll('video[data-src]');
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
