@@ -52,7 +52,6 @@ section{padding-block:clamp(64px,9vw,120px)}
 /* logo: «senimen.» — Playfair Display Black, lowercase, tracking −0.04em, blue dot */
 .logo{font-family:var(--display);font-weight:900;letter-spacing:-.04em;line-height:1;text-decoration:none;color:var(--white);white-space:nowrap}
 .logo i{font-style:normal;color:var(--blue)}
-.on-blue .logo i,.on-blue.logo i{color:var(--black)}
 .logo--v{display:inline-block;line-height:.86}
 .seal{width:64px;height:64px;flex:none}
 
@@ -113,18 +112,19 @@ section{padding-block:clamp(64px,9vw,120px)}
 .strip .span2 img{aspect-ratio:auto;height:100%}
 @media (max-width:760px){.strip{grid-template-columns:1fr 1fr}}
 
-/* manifesto band — the one place on the page with a blue background */
-.manifest{background:var(--blue);color:var(--white)}
-.manifest .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
-.brand-reel{margin:0;width:clamp(200px,24vw,300px);aspect-ratio:9/16;overflow:hidden;border:1px solid rgba(245,245,242,.35);background:var(--black)}
+/* manifesto band — black, mirrors og-image: seal · «senimen.» · slogan in spaced caps */
+.manifest{background:var(--black);border-block:1px solid var(--line)}
+.manifest .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(28px,5vw,72px);align-items:center}
+.manifest .seal{width:clamp(120px,16vw,220px);height:auto}
+.manifest-text{min-width:0}
+.manifest-logo{font-size:clamp(56px,9vw,128px);margin:0}
+.manifest-slogan{font-family:var(--body);font-weight:500;font-size:clamp(15px,1.7vw,22px);letter-spacing:.22em;text-transform:uppercase;color:var(--chrome);line-height:1.7;margin-top:18px}
+.manifest-slogan span{display:block}
+.manifest-text>p:last-child{margin-top:24px;max-width:52ch;color:var(--muted);font-size:16px}
+.brand-reel{margin:0;width:clamp(180px,20vw,260px);aspect-ratio:9/16;overflow:hidden;border:1px solid var(--line-2);background:var(--black-3)}
 .brand-reel video{width:100%;height:100%;object-fit:cover}
-.manifest h2{font-size:clamp(38px,7vw,92px);letter-spacing:-.03em}
-.manifest h2 em{display:block}
-.manifest p{margin-top:20px;max-width:56ch;font-size:clamp(16px,1.4vw,19px)}
-.manifest .eyebrow{color:var(--white)}
-.manifest .eyebrow em{text-transform:none;letter-spacing:0;font-size:1.3em;color:inherit}
-.eyebrow::before{background:var(--black)}
-@media (max-width:640px){.manifest .wrap{grid-template-columns:1fr}.brand-reel{width:min(70vw,300px)}}
+@media (max-width:980px){.manifest .wrap{grid-template-columns:auto 1fr}.brand-reel{grid-column:1/-1;width:min(70vw,300px)}}
+@media (max-width:560px){.manifest .wrap{grid-template-columns:1fr}.manifest .seal{width:110px}}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;margin:0;padding:0}
