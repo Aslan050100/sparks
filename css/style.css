@@ -126,13 +126,6 @@ section{padding-block:clamp(64px,9vw,120px)}
 .step p{color:var(--chrome);font-size:15.5px}
 @media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}}
 @media (max-width:480px){.steps{grid-template-columns:1fr}}
-.how{display:grid;grid-template-columns:1fr 340px;gap:clamp(32px,5vw,72px);align-items:center}
-.how .steps{grid-template-columns:1fr 1fr;row-gap:36px}
-.reel{position:relative;width:100%;max-width:340px;aspect-ratio:464/848;justify-self:end;border:1px solid var(--line);overflow:hidden;background:var(--black-3);margin:0}
-.reel video{width:100%;height:100%;object-fit:cover;display:block}
-.reel figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:linear-gradient(180deg,transparent,rgba(10,10,10,.85))}
-@media (max-width:860px){.how{grid-template-columns:1fr}.reel{justify-self:start}}
-@media (max-width:480px){.how .steps{grid-template-columns:1fr}}
 
 /* form */
 .lead-sec{background:radial-gradient(ellipse at 15% 0%,rgba(31,63,209,.22) 0%,var(--black) 60%)}

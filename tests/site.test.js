@@ -37,7 +37,7 @@ describe('HTTP status codes', () => {
     assert.match(await r.text(), /<meta name="robots" content="noindex/);
   });
   test('POST → 405', async () => assert.equal((await fetch(BASE + '/', { method: 'POST' })).status, 405));
-  test('video supports byte ranges (Safari/iOS)', async () => assert.equal((await get('/assets/video/backstage.mp4', { Range: 'bytes=0-99' })).status, 206));
+  test('video supports byte ranges (Safari/iOS)', async () => assert.equal((await get('/assets/video/registration.mp4', { Range: 'bytes=0-99' })).status, 206));
 });
 
 describe('robots.txt and crawler access', () => {
